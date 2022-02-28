@@ -50,3 +50,22 @@ header{
 .menu li{
     list-style: none;
 }
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.capt1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.capt2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
