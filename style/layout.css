@@ -69,3 +69,7 @@ main{
     flex-direction: column;
     align-items: center;
 }
+
+span {
+    justify-content: space-between;
+}
