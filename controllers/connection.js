@@ -28,13 +28,12 @@ function webSocketMethod() {
     socket.onerror = function (error) {
         logServerStatus('Erreur : ' + error);
     }
-
-    HotSDK._socket = socket;
-
     countdown = 5;
     function websSocketStateChecker(){
         if(countdown > 0 && !webSocketState){
             countdown--;
+            console.log('Waiting for websocket...');
+            setTimeout(websSocketStateChecker, 1000);
         }
         else{
             if(webSocketState)
@@ -46,8 +45,6 @@ function webSocketMethod() {
             HotSDK.connect();
             return;
         }
-        console.log('Waiting for websocket...');
-        setTimeout(websSocketStateChecker, 1000);
     }
     if(!webSocketState){
         websSocketStateChecker();
