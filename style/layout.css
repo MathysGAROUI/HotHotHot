@@ -35,15 +35,18 @@ header{
     color: white;
 }
 
-header ul{
+.menu{
+    width: 50%;
+}
+.menu ul{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 15%;
+    width: 25%;
+    padding: 0;
+    margin: auto;
 }
 
-li{
+.menu li{
     list-style: none;
-   
-
 }
