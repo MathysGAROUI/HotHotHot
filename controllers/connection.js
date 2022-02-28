@@ -37,6 +37,9 @@ function webSocketMethod() {
             countdown--;
         }
         else{
+            if(webSocketState)
+                return;
+            socket.close();
             logServerStatus('Socket not responding, switching method')
             HotSDK.connect = fetchMethod;
             logServerStatus('Fetch method');
@@ -46,7 +49,9 @@ function webSocketMethod() {
         console.log('Waiting for websocket...');
         setTimeout(websSocketStateChecker, 1000);
     }
-    websSocketStateChecker();
+    if(!webSocketState){
+        websSocketStateChecker();
+    }
 }
 
 
