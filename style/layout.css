@@ -2,6 +2,7 @@ body {
 	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
+    font-family: 'Montserrat', sans-serif;
 	
 }
 
@@ -44,7 +45,10 @@ h1{
     margin-bottom: 50px;
 }
 .menu{
-    width: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .menu ul{
     display: flex;
@@ -59,13 +63,24 @@ h1{
     list-style: none;
 }
 
-article{
+.menu a{
+    text-decoration: none;
+    color: white;
+    
+}
+
+.menu a:hover{
+    color: #74D5FC;
+}
+
+.capt{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #74D5FC;
+    border-radius: 20px;
+    padding: 30px;
 }
-
-
 
 span {
     justify-content: space-between;
