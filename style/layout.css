@@ -89,6 +89,8 @@ span {
     justify-content: space-between;
 }
 
-.line-chart{
-    margin: 50px;
+.chart-wrapper{
+    border: 1px solid black;
+    height: 500px;
+    width: 90%;
 }
