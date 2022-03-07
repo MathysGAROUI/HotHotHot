@@ -1,5 +1,4 @@
 function parse(str) {
-    console.log(str);
     let obj = JSON.parse(str);
     for(let capteur of obj.capteurs){
         capteur.Timestamp = new Date(capteur.Timestamp);
