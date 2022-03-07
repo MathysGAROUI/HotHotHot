@@ -4,10 +4,10 @@ html{
 }
 
 body {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	
+    background: url("17450.jpg");
+
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 @keyframes gradient {
@@ -91,6 +91,6 @@ span {
 
 .chart-wrapper{
     border: 1px solid black;
-    height: 500px;
+    height: 85%;
     width: 90%;
 }
