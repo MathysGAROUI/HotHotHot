@@ -1,28 +1,30 @@
 function logServerStatus(status){
+    /*
     const term = document.getElementById('term');
     term.innerText += '\n';
     term.innerText += '\n' + status + '\n';
+    */
+   console.log(status);
 }
 
 function webSocketMethod() {
-    logServerStatus('Socket method');
+    logServerStatus('Méthode : socket');
     webSocketState = false;
     const socket = new WebSocket('wss://ws.hothothot.dog:9502');
 
     socket.onopen = function () {
-        logServerStatus('Connecté au serveur');
+        logServerStatus('Connecté au serveur socket');
     }
 
     socket.onmessage = function (event) {
-        console.log('data received : ' + event.data);
+        logServerStatus('Données recues : ' + event.data);
         if(event.data != '')
             webSocketState = true;
-        logServerStatus('new data received');
         HotSDK.refresh(HotSDK.parse(event.data));
     }
 
     socket.onclose = function () {
-        logServerStatus('Déconnecté du serveur');
+        logServerStatus('Déconnecté du serveur socket');
     }
 
     socket.onerror = function (error) {
@@ -32,16 +34,16 @@ function webSocketMethod() {
     function websSocketStateChecker(){
         if(countdown > 0 && !webSocketState){
             countdown--;
-            console.log('Waiting for websocket...');
+            logServerStatus('En attente du serveur web socket...');
             setTimeout(websSocketStateChecker, 1000);
         }
         else{
             if(webSocketState)
                 return;
             socket.close();
-            logServerStatus('Socket not responding, switching method')
+            logServerStatus('Serveur socket hors service changement de méthode')
             HotSDK.connect = fetchMethod;
-            logServerStatus('Fetch method');
+            logServerStatus('Méthode : Fetch');
             HotSDK.connect();
             return;
         }
@@ -56,18 +58,18 @@ function fetchMethod()  {
   var promise = fetch("https://hothothot.dog/api/capteurs");
   promise.then(function(response) {
         if(!response.ok) {
-            logServerStatus("HTTP error, status = " + response.status);
-            throw new Error("HTTP error, status = " + response.status);
+            logServerStatus("erreur : " + response.status);
+            throw new Error("erreur : " + response.status);
         }
         var data = response.text();
         return data;
     })
     .then(function(data) {
-        logServerStatus('new data received');
+        logServerStatus('Données recues : ' + data);
         HotSDK.refresh(HotSDK.parse(data));
     })
     .catch(function(error)  {
-        console.log(error);
+        logServerStatus(error);
     });
     setTimeout(fetchMethod, 5000);
 }
