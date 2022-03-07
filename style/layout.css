@@ -88,3 +88,7 @@ h1{
 span {
     justify-content: space-between;
 }
+
+.line-chart{
+    margin: 50px;
+}

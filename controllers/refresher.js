@@ -5,6 +5,7 @@ function refresh(jsonData){
     val2.innerText = jsonData.capteurs[1].Valeur;
     HotSDK.store('capteurs', parseFloat(jsonData.capteurs[0].Valeur), parseFloat(jsonData.capteurs[1].Valeur))
     HotSDK.refreshMinAndMax();
+    HotSDK.refreshGraphics();
 }
 
 function refreshMinAndMax(){
