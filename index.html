@@ -10,7 +10,7 @@
     </head>
     <body>
         <header>
-            <h1 contenteditable spellcheck="false">Bienvenue sur notre WebSocket du turfu tah l'espace</h1>
+            <h1 contenteditable spellcheck="false">Bienvenue sur notre DashBoard</h1>
             <nav class="menu">
             <ul>
                 <li><a href="index.html"> Accueil </a></li>
@@ -20,13 +20,13 @@
         </header>
         <main>
 
-            <article class="capt">
+            <article class="capt afficher">
                 <h3>Capteur Interieur</h3>
                 <p><span id="val1">-</span></p>
                 <p>min: <span id="val1min">-</span> max: <span id="val1max">-</span></p>
             </article>
 
-            <article class="capt">
+            <article class="capt afficher">
                 <h3>Capteur Exterieur</h3>
                 <p><span id="val2">-</span></p> 
                 <p>min: <span id="val2min">-</span> max: <span id="val2max">-</span></p>
@@ -34,7 +34,7 @@
             
         </main>
         
-        <div class="chart-wrapper">
+        <div class="chart-wrapper cacher">
             <canvas id="line-chart" ></canvas>
         </div>
 
@@ -48,6 +48,7 @@
         <script type="text/javascript" src="controllers/refresher.js"></script>
         <script type="text/javascript" src="controllers/storage.js"></script>
         <script type="text/javascript" src="controllers/graphics.js"></script>
+        <script type="text/javascript" src="controllers/layout.js"></script>
 
 
         <!-- <script src="https://cdn.tailwindcss.com"></script> -->
