@@ -16,7 +16,13 @@ function load(from){
     return JSON.parse(localStorage.getItem(from));
 }
 
+function initLocalStorage(){
+    if(localStorage.getItem('capteurs') == null){
+        localStorage.setItem('capteurs', "{\"cpt1\" : [],\"cpt2\" : [], \"dates\" : []}");
+    }
+}
+
+HotSDK.initLocalStorage = initLocalStorage;
 HotSDK.store = store;
 HotSDK.load = load;
-
 

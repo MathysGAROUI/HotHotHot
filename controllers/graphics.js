@@ -4,7 +4,6 @@ var cpt2 = [];
 var dates = [];
 
 function refreshGraphics(){
-
     allDates = JSON.parse(localStorage.getItem('capteurs')).dates;
 
     if(allDates.length == 0 || allDates[allDates.length - 1] === lastLabel){
