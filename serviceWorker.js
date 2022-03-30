@@ -6,7 +6,7 @@ var STATIC_FILES = [
     "/controllers/global.js",
     "/controllers/graphics.js",
     "/controllers/layout.js",
-    "/controllers/notification.js",
+    //"/controllers/notification.js",
     "/controllers/parsing.js",
     "/controllers/pwa.js",
     "/controllers/refresher.js",
