@@ -1,4 +1,5 @@
 function registerServiceWorker(){
+    console.log('asked service worker to wake up');
     navigator.serviceWorker
         .register('/serviceWorker.js')
         .then(function(reg){
