@@ -1,0 +1,45 @@
+{
+  "name": "Hot Hot Hot",
+  "short_name": "HotHotHot",
+  "icons": [
+    {
+      "src": "/images/app_icon48x48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "/images/app_icon72x72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "/images/app_icon96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/images/app_icon144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/images/app_icon192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/app_icon512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "landscape-primary",
+  "background_color": "#fff",
+  "theme_color": "#007BFF",
+  "description": "Controlez la température avec ce dashboard",
+  "dir": "ltr",
+  "lang": "fr-FR"
+}
