@@ -74,4 +74,6 @@ function fetchMethod()  {
     setTimeout(fetchMethod, 5000);
 }
 
+
+
 HotSDK.connect = webSocketMethod;
