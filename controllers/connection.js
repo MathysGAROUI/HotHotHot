@@ -74,6 +74,14 @@ function fetchMethod()  {
     setTimeout(fetchMethod, 5000);
 }
 
+window.addEventListener('offline', () => {
+    console.log('offline');
+    // Update your UI to reflect that there's no connection.
+});
 
+window.addEventListener('online', () => {
+    console.log('online');
+    // Update your UI to reflect that the connection is back.
+});
 
 HotSDK.connect = webSocketMethod;
