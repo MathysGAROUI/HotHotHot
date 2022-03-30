@@ -26,17 +26,17 @@ self.addEventListener('install', function(event){
     event.waitUntil(
         caches.open(STATIC_CACHE_CONTAINER)
             .then(function(cache){
-                cache.addAll(STATIC_FILES).then(function() {
-                    console.log('requests have been added to the cache');
-                })
+                cache.addAll(STATIC_FILES);
             })
     )
+
 })
 
 self.addEventListener('activate', function(event){
     console.log("service worker activated", event)
 })
 
+/*
 self.addEventListener('fetch', function(event){
     event.respondWith(
         caches.match(event.request)
@@ -47,3 +47,29 @@ self.addEventListener('fetch', function(event){
             })
     )
 })
+ */
+
+/*
+self.addEventListener('fetch', function(event) {
+    event.respondWith(
+        fetch(event.request).catch(function() {
+            return caches.match(event.request);
+        })
+    );
+});
+ */
+
+self.addEventListener('fetch', function (event) {
+    event.respondWith(
+        caches.open(STATIC_CACHE_CONTAINER).then(function (cache) {
+            return cache.match(event.request).then(function (response) {
+                return response || fetch(event.request).then(function (response) {
+                    cache.put(event.request, response.clone());
+                    return response;
+                });
+            });
+        })
+
+    );
+
+});
