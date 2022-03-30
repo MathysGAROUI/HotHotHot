@@ -21,7 +21,9 @@ self.addEventListener('install', function(event){
     event.waitUntil(
         caches.open(STATIC_CACHE_CONTAINER)
             .then(function(cache){
-                cache.addAll(STATIC_FILES)
+                cache.addAll(STATIC_FILES).then(function() {
+                    console.log('requests have been added to the cache');
+                })
             })
     )
 })
