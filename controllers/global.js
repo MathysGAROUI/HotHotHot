@@ -1,5 +1,6 @@
 const HotSDK = {
-
+    refreshTimeRate: 60,
+    socketTimeout: 5
 };
 
 document.addEventListener('DOMContentLoaded', function() {

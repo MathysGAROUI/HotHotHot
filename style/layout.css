@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
+
 html{
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -8,13 +10,9 @@ html{
 }
 
 body {
-    background: url("17450.jpg");
-    background-repeat: no-repeat;
+    background: darkblue no-repeat;
     background-size: 100%;
 }
-
-@import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
-
 
 
 h1 {
@@ -81,7 +79,7 @@ h1:focus {
 	}
 }
 
-main {
+.sensors {
     padding-top: calc(env(safe-area-inset-top) + 73px);
     padding-bottom: calc(env(safe-area-inset-bottom) + 73px);
     height: auto;
@@ -92,6 +90,8 @@ main {
     margin: 50px auto;
     
 }
+
+
 
 header{
     margin-top: 200px;
@@ -146,7 +146,6 @@ span {
 }
 
 .chart-wrapper{
-    border: 1px solid black;
     height: 85%;
     width: 90%;
 }

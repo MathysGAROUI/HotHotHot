@@ -11,33 +11,38 @@
     </head>
     <body>
         <header>
-            <h1>Bienvenue sur notre DashBoard</h1>
+            <h1>Bienvenue sur notre DashBoard 2</h1>
             <nav class="menu">
             <ul>
-                <li><a href="index.html"> Accueil </a></li>
-                <li><a href ="#"> Projet </a></li>
+                <li><a id="mainPageButton"> Accueil </a></li>
+                <li><a id="historyPageButton"> Historique </a></li>
             </ul>
             </nav>
         </header>
+
         <main>
+            <div id="mainPage">
+                <div class="sensors">
+                    <article class="capt afficher">
+                        <h3>Capteur Interieur</h3>
+                        <p><span id="val1">-</span></p>
+                        <p>min: <span id="val1min">-</span> max: <span id="val1max">-</span></p>
+                    </article>
 
-            <article class="capt afficher">
-                <h3>Capteur Interieur</h3>
-                <p><span id="val1">-</span></p>
-                <p>min: <span id="val1min">-</span> max: <span id="val1max">-</span></p>
-            </article>
+                    <article class="capt afficher">
+                        <h3>Capteur Exterieur</h3>
+                        <p><span id="val2">-</span></p>
+                        <p>min: <span id="val2min">-</span> max: <span id="val2max">-</span></p>
+                    </article>
+                </div>
+                <div class="chart-wrapper cacher">
+                    <canvas id="line-chart" ></canvas>
+                </div>
+            </div>
+            <div id="historyPage">
 
-            <article class="capt afficher">
-                <h3>Capteur Exterieur</h3>
-                <p><span id="val2">-</span></p> 
-                <p>min: <span id="val2min">-</span> max: <span id="val2max">-</span></p>
-            </article>
-            
+            </div>
         </main>
-        
-        <div class="chart-wrapper cacher">
-            <canvas id="line-chart" ></canvas>
-        </div>
 
         <footer>
 
@@ -51,6 +56,8 @@
         <script type="text/javascript" src="controllers/storage.js"></script>
         <script type="text/javascript" src="controllers/graphics.js"></script>
         <script type="text/javascript" src="controllers/layout.js"></script>
+        <script type="text/javascript" src="controllers/router.js"></script>
+        <script type="text/javascript" src="controllers/notifications.js"></script>
 
 
         <!-- <script src="https://cdn.tailwindcss.com"></script> -->

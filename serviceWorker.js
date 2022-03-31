@@ -7,7 +7,7 @@ var STATIC_FILES = [
     "/controllers/global.js",
     "/controllers/graphics.js",
     "/controllers/layout.js",
-    //"/controllers/notification.js",
+    "/controllers/notification.js",
     "/controllers/parsing.js",
     "/controllers/pwa.js",
     "/controllers/refresher.js",
@@ -16,7 +16,6 @@ var STATIC_FILES = [
     "/models/Sensor.js",
     "/style/",
     "/style/layout.css",
-    "/style/17450.jpg",
     "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js",
     "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,200&display=swap",
     "manifest.json"
@@ -36,28 +35,6 @@ self.addEventListener('activate', function(event){
     console.log("service worker activated", event)
 })
 
-/*
-self.addEventListener('fetch', function(event){
-    event.respondWith(
-        caches.match(event.request)
-            .then(function(response){
-                if(response){
-                    return response
-                }
-            })
-    )
-})
- */
-
-/*
-self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        fetch(event.request).catch(function() {
-            return caches.match(event.request);
-        })
-    );
-});
- */
 
 self.addEventListener('fetch', function (event) {
     event.respondWith(
