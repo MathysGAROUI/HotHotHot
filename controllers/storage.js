@@ -20,7 +20,7 @@ function storeAlert(msg){
         localStorage.setItem('alerts', "{\"msg\" : [], \"dates\" : []}")
     }
     jsonData = JSON.parse(localStorage.getItem('alerts'));
-    jsonData.msg.push(cpt2);
+    jsonData.msg.push(msg);
     jsonData.dates.push(hour+":"+minutes);
     localStorage.setItem('alerts', JSON.stringify(jsonData));
 }
