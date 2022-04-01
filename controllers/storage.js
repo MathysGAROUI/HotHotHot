@@ -30,6 +30,7 @@ function load(from){
 }
 
 function initLocalStorage(){
+    console.log('Init local storage');
     if(localStorage.getItem('capteurs') == null){
         localStorage.setItem('capteurs', "{\"cpt1\" : [],\"cpt2\" : [], \"dates\" : []}");
     }
