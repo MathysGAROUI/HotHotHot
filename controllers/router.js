@@ -23,7 +23,7 @@ function disableAllPages(){
 
 document.getElementById("historyPageButton").onclick = function (){
     switchPage('history');
-    HotSDK.sendNotif('hihihiha');
+    HotSDK.notifyAndAlert('hihihiha');
 }
 
 document.getElementById("mainPageButton").onclick = function (){

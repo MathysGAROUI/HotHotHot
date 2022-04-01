@@ -45,6 +45,7 @@ function notifyAndAlert(msg){
     sendAlert(msg);
     checkAndSendNotification(msg);
     storeAlert(msg);
+    HotSDK.updateAlertTable();
 }
 
 HotSDK.sendAlert = sendAlert;
