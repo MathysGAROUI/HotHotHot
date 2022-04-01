@@ -8,9 +8,9 @@ function initializePushNotifications() {
     });
 }
 
-function sendNotification() {
+function sendNotification(msg) {
     const img = "/images/app_icon192x192.png";
-    const text = "Notification !";
+    const text = msg;
     const title = "Titre";
     const options = {
         body: text,
@@ -25,14 +25,27 @@ function sendNotification() {
     });
 }
 
-function checkAndSendNotification(){
+function checkAndSendNotification(msg){
     if(isPushNotificationSupported()){
         initializePushNotifications().then(function (consent){
             if(consent === 'granted'){
-                sendNotification();
+                sendNotification(msg);
             }
         })
     }
 }
 
-HotSDK.sendNotif =  checkAndSendNotification;
+function sendAlert(msg){
+    if (confirm(msg + ' Voulez vous consulter l\'historique des alertes ?')) {
+        HotSDK.switchPage('alertHistory');
+    }
+}
+
+function notifyAndAlert(msg){
+    sendAlert(msg);
+    checkAndSendNotification(msg);
+}
+
+HotSDK.sendAlert = sendAlert;
+HotSDK.sendNotif = checkAndSendNotification;
+HotSDK.notifyAndAlert = notifyAndAlert;

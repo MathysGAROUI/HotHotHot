@@ -3,9 +3,31 @@ function refresh(jsonData){
     const val2 = document.getElementById('val2');
     val1.innerText = jsonData.capteurs[0].Valeur;
     val2.innerText = jsonData.capteurs[1].Valeur;
-    HotSDK.store('capteurs', parseFloat(jsonData.capteurs[0].Valeur), parseFloat(jsonData.capteurs[1].Valeur))
+    checkValues(jsonData.capteurs[0].Valeur, jsonData.capteurs[1].Valeur);
+    HotSDK.storeSensors(parseFloat(jsonData.capteurs[0].Valeur), parseFloat(jsonData.capteurs[1].Valeur))
     HotSDK.refreshMinAndMax();
     HotSDK.refreshGraphics();
+}
+
+function checkValues(cpt1, cpt2){
+    if(cpt2 > 35){
+        HotSDK.notifyAndAlert('alerte : Hot Hot Hot !');
+    }
+    else if(cpt2 < 0){
+        HotSDK.notifyAndAlert('alerte : Banquise en vue !');
+    }
+    if(cpt1 > 22){
+        HotSDK.notifyAndAlert('alerte : Baissez le chauffage !');
+    }
+    else if(cpt1 > 50){
+        HotSDK.notifyAndAlert('alerte : Appelez les pompiers ou arrêtez votre barbecue !');
+    }
+    else if(cpt1 < 12){
+        HotSDK.notifyAndAlert('alerte : montez le chauffage ou mettez un gros pull !');
+    }
+    else if(cpt1 < 0){
+        HotSDK.notifyAndAlert('alerte : canalisations gelées, appelez SOS plombier et mettez un bonnet !');
+    }
 }
 
 function refreshMinAndMax(){
