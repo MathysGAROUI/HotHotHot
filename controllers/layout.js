@@ -1,7 +1,7 @@
 function updateAlertTable(){
   const myTableBody = document.getElementById("alertTable");
 
-  console.log(HotSDK.load('alertTable'));
+  console.log(HotSDK.load('alerts'));
 
   const helloWorldsKeys = Object.keys(helloWorlds);
 
