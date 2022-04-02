@@ -8,8 +8,10 @@ let STATIC_FILES = [
     "/controllers/storage.js",
     "/controllers/connection.js",
     "/style/",
-    "/style/layout.css"
-
+    "/style/layout.css",
+    "/models/",
+    "/models/alert.js",
+    "/models/sensor.js"
 ]
 
 self.addEventListener('install', function(event){
