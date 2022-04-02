@@ -64,17 +64,17 @@ function updateTable(table){
     case 'alert':
       let msg = document.createElement('td');
       msg.classList.add('listItem');
-      msg.innerHTML = JSONalerts.msg[i];
+      msg.innerHTML = JSONalerts.msg[JSONalerts.msg.length - 1];
       tableRow.appendChild(msg);
       break
     case 'sensor':
       let cpt1 = document.createElement('td');
       cpt1.classList.add('listItem');
-      cpt1.innerHTML = JSONalerts.cpt1[i];
+      cpt1.innerHTML = JSONalerts.cpt1[JSONalerts.cpt1.length - 1];
       tableRow.appendChild(cpt1);
       let cpt2 = document.createElement('td');
       cpt2.classList.add('listItem');
-      cpt2.innerHTML = JSONalerts.cpt2[i];
+      cpt2.innerHTML = JSONalerts.cpt2[JSONalerts.cpt2.length - 1];
       tableRow.appendChild(cpt2);
       break
   }
