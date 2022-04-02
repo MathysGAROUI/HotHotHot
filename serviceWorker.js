@@ -3,22 +3,9 @@ var STATIC_FILES = [
     "/",
     "/favicon.ico",
     "/controllers/",
-    "/controllers/connection.js",
     "/controllers/global.js",
-    "/controllers/graphics.js",
     "/controllers/layout.js",
-    "/controllers/notification.js",
-    "/controllers/parsing.js",
-    "/controllers/pwa.js",
-    "/controllers/refresher.js",
     "/controllers/storage.js",
-    "/models/",
-    "/models/Sensor.js",
-    "/style/",
-    "/style/layout.css",
-    "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js",
-    "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,200&display=swap",
-    "manifest.json"
 ]
 
 self.addEventListener('install', function(event){
