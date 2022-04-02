@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
         HotSDK.loadTable('sensor');
         HotSDK.connect();
         HotSDK.refreshMinAndMax();
-        HotSDK.refreshGraphics();
     }
     else{
         HotSDK.initLocalStorage();
