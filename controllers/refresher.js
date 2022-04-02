@@ -4,7 +4,8 @@ function refresh(jsonData){
     val1.innerText = jsonData.capteurs[0].Valeur;
     val2.innerText = jsonData.capteurs[1].Valeur;
     checkValues(jsonData.capteurs[0].Valeur, jsonData.capteurs[1].Valeur);
-    HotSDK.storeSensors(parseFloat(jsonData.capteurs[0].Valeur), parseFloat(jsonData.capteurs[1].Valeur))
+    HotSDK.storeSensors(parseFloat(jsonData.capteurs[0].Valeur), parseFloat(jsonData.capteurs[1].Valeur));
+    HotSDK.updateTable('sensor');
     HotSDK.refreshMinAndMax();
     HotSDK.refreshGraphics();
 }
