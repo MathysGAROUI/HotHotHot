@@ -18,10 +18,25 @@ function loadTable(table){
   let JSONalerts = HotSDK.load(tableName);
   for(let i = 0; i < JSONalerts.dates.length; i++){
     let tableRow = document.createElement('tr');
-    let msg = document.createElement('td');
-    msg.classList.add('listItem');
-    msg.innerHTML = JSONalerts.msg[i];
-    tableRow.appendChild(msg);
+    switch (table){
+      case 'alert':
+        let msg = document.createElement('td');
+        msg.classList.add('listItem');
+        msg.innerHTML = JSONalerts.msg[i];
+        tableRow.appendChild(msg);
+        break
+      case 'sensor':
+        let cpt1 = document.createElement('td');
+        cpt1.classList.add('listItem');
+        cpt1.innerHTML = JSONalerts.cpt1[i];
+        tableRow.appendChild(cpt1);
+        let cpt2 = document.createElement('td');
+        cpt2.classList.add('listItem');
+        cpt2.innerHTML = JSONalerts.cpt2[i];
+        tableRow.appendChild(cpt2);
+        break
+    }
+
     let date = document.createElement('td');
     date.classList.add('listItem');
     date.innerHTML = JSONalerts.dates[i];
