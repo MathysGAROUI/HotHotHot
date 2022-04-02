@@ -97,6 +97,7 @@ function sort(table, by){
           n = 1;
           break
         case 'date':
+          n = 2;
           break
       }
       break
