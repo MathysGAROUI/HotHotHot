@@ -33,10 +33,10 @@ document.getElementById("alertHistoryPageButton").onclick = function (){
     switchPage('alertHistory');
 }
 document.getElementById("testChaudButton").onclick = function (){
-    HotSDK.notifyAndAlert('Chaud');
+    new Alert('alerte : Feu en vue !');
 }
 document.getElementById("testFroidButton").onclick = function (){
-    HotSDK.notifyAndAlert('Froid');
+    new Alert('alerte : Banquise en vue !');
 }
 switchPage('main');
 HotSDK.switchPage = switchPage;

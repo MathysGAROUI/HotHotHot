@@ -1,7 +1,7 @@
-var lastLabel = '';
-var cpt1 = [];
-var cpt2 = [];
-var dates = [];
+let lastLabel = '';
+let cpt1 = [];
+let cpt2 = [];
+let dates = [];
 
 function refreshGraphics(){
     let allDates = JSON.parse(localStorage.getItem('capteurs')).dates;
@@ -69,8 +69,6 @@ function refreshGraphics(){
     });
 
     lastLabel = chartData.chart.config.data.labels[chartData.chart.config.data.labels.length - 1];
-
 }
-
 
 HotSDK.refreshGraphics = refreshGraphics;

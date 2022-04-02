@@ -1,9 +1,4 @@
 function logServerStatus(status){
-    /*
-    const term = document.getElementById('term');
-    term.innerText += '\n';
-    term.innerText += '\n' + status + '\n';
-    */
    console.log(status);
 }
 
