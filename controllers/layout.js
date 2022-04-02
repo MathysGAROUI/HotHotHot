@@ -12,7 +12,7 @@ function loadTable(table){
       tableRef = sensorTable;
       break
   }
-  let JSONalerts = HotSDK.load('alerts');
+  let JSONalerts = HotSDK.load(table);
   for(let i = 0; i < JSONalerts.dates.length; i++){
     let tableRow = document.createElement('tr');
     let msg = document.createElement('td');
@@ -28,7 +28,7 @@ function loadTable(table){
 }
 
 function updateTable(table){
-  let JSONalerts = HotSDK.load('alerts');
+  let JSONalerts = HotSDK.load(table);
   let tableRow = document.createElement('tr');
   let msg = document.createElement('td');
   msg.classList.add('listItem');
