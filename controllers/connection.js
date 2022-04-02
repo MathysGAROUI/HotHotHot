@@ -93,5 +93,4 @@ window.addEventListener('online', () => {
     console.log('online');
 });
 
-HotSDK.online = window.navigator.onLine;
 HotSDK.connect = webSocketMethod;
