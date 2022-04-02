@@ -4,6 +4,8 @@
 
 # Notice explicative
 
+URL du site  : https://hot-hot-hot.vercel.app
+
 ## Accueil
 Sur cette page, vous retrouverez les données des capteurs en temps réel, mais également les valeurs minimales et maximales jamais atteintes.
 ![graph](images/sensors.png)
