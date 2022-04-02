@@ -1,106 +1,157 @@
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href = "style/layout.css" rel="stylesheet">
-        <title>HotHotHot</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,200&display=swap" rel="stylesheet">
-        <link rel="manifest" href="/manifest.json"/>
-    </head>
-    <body>
-        <header>
-            <h1>Bienvenue sur notre DashBoard 2</h1>
-            <nav class="menu">
-            <ul>
-                <li id="mainPageButton"><a> Accueil </a></li>
-                <li id="historyPageButton"><a> Historique </a></li>
-                <li id="alertHistoryPageButton"><a> Alertes </a></li>
-                <li id="testPageButton"><a> Tests </a></li>
-                <li id="accountPageButton"><a> Mon Compte </a></li>
-            </ul>
-            </nav>
-        </header>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "style/layout.css" rel="stylesheet">
+    <title>HotHotHot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,200&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json"/>
+</head>
+<body>
+<header>
+    <h1>Bienvenue sur notre DashBoard</h1>
+    <nav class="menu">
+        <ul>
+            <li id="mainPageButton"><a> Accueil </a></li>
+            <li id="historyPageButton"><a> Historique </a></li>
+            <li id="alertHistoryPageButton"><a> Alertes </a></li>
+            <li id="testPageButton"><a> Tests </a></li>
+            <li id="documentationPageButton"><a> Documentation </a></li>
+            <li id="accountPageButton"><a> Mon Compte </a></li>
+        </ul>
+    </nav>
+</header>
 
-        <main>
-            <div id="mainPage">
-                <div class="sensors">
-                    <article class="capt afficher">
-                        <h3>Capteur Interieur</h3>
-                        <p><span id="val1">-</span></p>
-                        <p>min: <span id="val1min">-</span> max: <span id="val1max">-</span></p>
-                    </article>
+<main>
+    <div id="mainPage">
+        <div class="sensors">
+            <article class="capt afficher">
+                <h3>Capteur Interieur</h3>
+                <p><span id="val1">-</span></p>
+                <p>min: <span id="val1min">-</span> max: <span id="val1max">-</span></p>
+            </article>
 
-                    <article class="capt afficher">
-                        <h3>Capteur Exterieur</h3>
-                        <p><span id="val2">-</span></p>
-                        <p>min: <span id="val2min">-</span> max: <span id="val2max">-</span></p>
-                    </article>
-                </div>
-                <div class="chart-wrapper cacher">
-                    <canvas id="line-chart" ></canvas>
-                </div>
+            <article class="capt afficher">
+                <h3>Capteur Exterieur</h3>
+                <p><span id="val2">-</span></p>
+                <p>min: <span id="val2min">-</span> max: <span id="val2max">-</span></p>
+            </article>
+        </div>
+        <div class="chart-wrapper cacher">
+            <canvas id="line-chart" ></canvas>
+        </div>
+    </div>
+    <div id="historyPage">
+        <table>
+            <thead>
+            <td id="sortSensorByExt">Exterieur ⟠</td>
+            <td id="sortSensorByInt">Interieur ⟠</td>
+            <td id="sortSensorByDate">Date ⟠</td>
+            </thead>
+            <tbody id="sensorTable"></tbody>
+        </table>
+    </div>
+    <div id="alertHistoryPage">
+        <table>
+            <thead>
+            <td id="sortAlertByMsg">Message ⟠</td>
+            <td id="sortAlertByDate">Date ⟠</td>
+            </thead>
+            <tbody id="alertTable"></tbody>
+        </table>
+    </div>
+    <div id="testPage">
+        <button id="testAlertHot">Forcer alerte chaud</button>
+        <button id="testAlertCold">Forcer alerte froid</button>
+    </div>
+    <div id="accountPage">
+        <section class='login' id='login'>
+            <div class='head'>
+                <h1 class='company'>Bonjour !</h1>
             </div>
-            <div id="historyPage">
-                <table>
-                    <thead>
-                    <td id="sortSensorByExt">Exterieur ⟠</td>
-                    <td id="sortSensorByInt">Interieur ⟠</td>
-                    <td id="sortSensorByDate">Date ⟠</td>
-                    </thead>
-                    <tbody id="sensorTable"></tbody>
-                </table>
+            <p class='msg'>Connectez vous</p>
+            <div class='form'>
+                <form>
+                    <input type="text" placeholder='E-mail' class='text' id='username' required><br>
+                    <input type="password" placeholder='••••••••••••••' class='password'><br>
+                    <a href="" class='btn-login' id='do-login'>Connection</a>
+                    <a href="" class='forgot'>Mot de passe oublié ?</a>
+                </form>
             </div>
-            <div id="alertHistoryPage">
-                <table>
-                    <thead>
-                        <td id="sortAlertByMsg">Message ⟠</td>
-                        <td id="sortAlertByDate">Date ⟠</td>
-                    </thead>
-                    <tbody id="alertTable"></tbody>
-                </table>
-            </div>
-            <div id="testPage">
-                <button id="testAlertHot">Forcer alerte chaud</button>
-                <button id="testAlertCold">Forcer alerte froid</button>
-            </div>
-            <div id="accountPage">
-                <section class='login' id='login'>
-                    <div class='head'>
-                        <h1 class='company'>Bonjour !</h1>
-                    </div>
-                    <p class='msg'>Connectez vous</p>
-                    <div class='form'>
-                        <form>
-                            <input type="text" placeholder='E-mail' class='text' id='username' required><br>
-                            <input type="password" placeholder='••••••••••••••' class='password'><br>
-                            <a href="" class='btn-login' id='do-login'>Connection</a>
-                            <a href="" class='forgot'>Mot de passe oublié ?</a>
-                        </form>
-                    </div>
-                </section>
-            </div>
-        </main>
+        </section>
+    </div>
+    <div id="documentationPage">
+        <h2>Notice d'utilisation</h2>
+        <p>Une notice explicative de notre site est disponible à </p><a href="https://github.com/MathysGAROUI/HotHotHot#readme">cette adresse</a>
 
-        <footer>
+        <h2>Présentation de l'équipe</h2>
+        <p>Nous sommes 5 membres à avoir contribué au projet :</p>
+        <h3>Ethan Moussaoui</h3>
+        <p>Chargé d'assurer la bonne connection avec le serveur web socket ou http.
+            Chargé d'assurer le changement de méthode de récupération de données en cas de problème.
+            Chargé d'assurer la detection d'une déconnection ou d'une reconnection.
+            Chargé de la création d'un graphique avec graph.js.</p>
+        <h3>Mathys Garoui</h3>
+        <p>Garant d'une organisation de code adaptée au travail de groupe et fiable.
+            Responsable du modèle MVC et de la liaison entre les scripts.
+        </p>
+        <h3>Yanis Bennai</h3>
+        <p>Mise en place d'une progressive web app avec le manifest et le service worker.
+            Chargé d'assurer la mise en cache et le fonctionnement hors ligne du site web.</p>
+        <h3>Nina Vu Van</h3>
+        <p>Chargée du bon stockage des valeurs obtenues dans le local storage et de leur récupération.
+            Chargée de la génération et de la mise à jour des tableaux</p>
+        <h3>Wissem Gouhili</h3>
+        <p>Chargé de la création des classes alert et sensor ainsi que du système de notification et d'alerte.</p>
+        <br>
+        <h2>Outils utilisés et organisation</h2>
+        <p>Pour réaliser ce projet, nous avons décidé d'utiliser un Github pour le versionnage de notre code. Nous avons décidé d'adopter ce qui pourrait se rapprocher d'un modèle MVC afin de pouvoir faire en sorte que chacun travaille sur ses fichiers.
+        </p><br><p>
+        Ainsi nous avons un répertoire controllers qui contient tous les scripts catégorisés par fonctionnalités. Nous avons également un répertoire models qui contient des objets pour les alertes et les données récoltées des capteurs. Ces objets simplifient drastiquement le code des contrôleurs et rend notre code plus modulable.
+    </p><br><p>
+        Concernant les méthodes de travail utilisées, chaque membre testait ses fonctionnalités sur un projet brouillon à part et quand elles fonctionnaient elles étaient réécrites sur le dépot Git principal.
+    </p><br><p>
+        Nous avons fais en sorte que chacun puisse utiliser les fonctions des autres grâce à notre classe global.js qui assure une communication entre tous les fichiers de notre site. Nous avons rapidement utilisé le logiciel WebStorm qui propose l'outil 'Code With Me' afin de pouvoir travailler en même temps sur les mêmes fichiers sans se soucier des problèmes de merge ou de conflits entre les versions de chacun. De plus Code With Me permet d’organiser des visioconférences ce qui nous a permis de toujours travailler en équipe avec une bonne communication au sein du groupe. Ainsi nous nous rejoignions sur la session de Mathys et nous contribuions tous dessus chacun sur nos fichiers. C’est d’ailleurs la raison pour laquelle les pushs sont pratiquement tout le temps effectués par le compte de Mathys mais c’est bel et bien toute l’équipe qui contribuais au code.
+    </p><br><p>
+        Nous avons vite du trouver une solution d’hébergement pour pouvoir faire fonctionner notre PWA. Nous avons donc choisi Vercel qui propose un hébergement lié à un repo GitHub et qui se met à jour à chaque nouveau push. De plus Vercel propose le protocole HTTPS nous avons donc pu tester notre PWA sans trop de problèmes.
+    </p><br>
+        <a href="https://github.com/MathysGAROUI/HotHotHot">Lien du git</a>
+        <br>
+        <a href="https://hot-hot-hot.vercel.app">Lien du site web</a>
+        <br>
+        <h2>Principales difficultés recontrées</h2>
+        <p>La principale difficulté rencontrée était de faire fonctionner notre site web hors ligne. La mise en place d’une stratégie de stockage en cache a demandé une longue phase d’essais laborieuse. Il fallait penser à toutes les situations, si jamais on perdait la connection dès l’accès au site ou si on la perdait pendant la navigation sur le site. Mais il fallait également être capable de rendre notre site de nouveau fonctionnel si on retrouvait la connection, une fonctionnalité majeure que nous avons finalement réussi à mettre en oeuvre.
+        </p><br><p>
+        Une autre difficulté rencontrée était l’implémentation d’un graphique dynamique et qui se mettait à jour en temps réel.  Nous avons du nous familiariser avec graph.js. De plus nous devions penser à une stratégie d’affichage qui soit intéréssante. Ainsi et à force d’essais non concluants nous avons décidé d’afficher un nouveau graphique pour chaque connection au site. Ce graphique se rafraichit toutes les minutes et n’afficher que les 20 dernières minutes de captation si 20 minutes de connection consécutives sont atteintes. Encore une fois les tests était difficiles car nous ne pouvions pas attendre 20 minutes pour tester il a donc fallu trouver des combines comme générer des fausses valeurs pour pouvoir simplifier les essais. Notre graphique n’affichant que les 20 dernières minutes de captation, nous avons implémenté un tableau historique répertoriant toutes les températures captées depuis le début.
+    </p>
+        <h2>Axes d'amélioration</h2>
+        <p>Pour ce qui est de la gestion d’équipe nous avons tous trouvé que les méthodes utilisées étaient pratiques et permettaient la participation active de tous les membres. Elle assurait un bon rythme de travail et rendait l’équipe productive.
+        </p><br><p>
+        Pour ce qui est du travail réalisé nous aurions aimé apporter une amélioration visuelle avec du css mais ce n’était pas notre priorité, nous voulions que tous les membres implémentent des fonctions javascript. Nous aurions également voulu pouvoir avoir un graphique customisable avec des options permettant de voir le graphique sur les x dernières minutes/heures par exemple. Nous aurions également aimé implémenter un système d’alertes personnalisé avec par exemple une petite bulle sur l’écran plutot qu’une boite de dialogue.
+    </p>
+    </div>
+</main>
 
-        </footer>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-        <script type="text/javascript" src="controllers/global.js"></script>
-        <script type="text/javascript" src="controllers/pwa.js"></script>
-        <script type="text/javascript" src="controllers/parsing.js"></script>
-        <script type="text/javascript" src="controllers/connection.js"></script>
-        <script type="text/javascript" src="controllers/refresher.js"></script>
-        <script type="text/javascript" src="controllers/storage.js"></script>
-        <script type="text/javascript" src="controllers/graphics.js"></script>
-        <script type="text/javascript" src="controllers/tablesLayout.js"></script>
-        <script type="text/javascript" src="controllers/router.js"></script>
-        <script type="text/javascript" src="controllers/notifications.js"></script>
-        <script type="text/javascript" src="models/alert.js"></script>
-        <script type="text/javascript" src="models/sensor.js"></script>
+<footer>
+
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script type="text/javascript" src="controllers/global.js"></script>
+<script type="text/javascript" src="controllers/pwa.js"></script>
+<script type="text/javascript" src="controllers/parsing.js"></script>
+<script type="text/javascript" src="controllers/connection.js"></script>
+<script type="text/javascript" src="controllers/refresher.js"></script>
+<script type="text/javascript" src="controllers/storage.js"></script>
+<script type="text/javascript" src="controllers/graphics.js"></script>
+<script type="text/javascript" src="controllers/tablesLayout.js"></script>
+<script type="text/javascript" src="controllers/router.js"></script>
+<script type="text/javascript" src="controllers/notifications.js"></script>
+<script type="text/javascript" src="models/alert.js"></script>
+<script type="text/javascript" src="models/sensor.js"></script>
 
 
-        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    </body>
+<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+</body>
 </html>

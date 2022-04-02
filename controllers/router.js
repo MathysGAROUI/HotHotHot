@@ -16,6 +16,9 @@ function switchPage(page){
         case 'account':
             document.getElementById('accountPage').style = 'display: block;';
             break;
+        case 'documentation':
+            document.getElementById('documentationPage').style = 'display: block;';
+            break;
     }
 }
 
@@ -25,6 +28,7 @@ function disableAllPages(){
     document.getElementById('alertHistoryPage').style = 'display: none;';
     document.getElementById('testPage').style = 'display: none;';
     document.getElementById('accountPage').style = 'display: none;';
+    document.getElementById('documentationPage').style = 'display: none;';
 
 }
 
@@ -48,6 +52,9 @@ document.getElementById("accountPageButton").onclick = function (){
     switchPage('account');
 }
 
+document.getElementById("documentationPageButton").onclick = function (){
+    switchPage('documentation');
+}
 
 switchPage('main');
 HotSDK.switchPage = switchPage;
