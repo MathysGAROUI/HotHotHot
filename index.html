@@ -17,8 +17,7 @@
                 <li><a id="mainPageButton"> Accueil </a></li>
                 <li><a id="historyPageButton"> Historique </a></li>
                 <li><a id="alertHistoryPageButton"> Alertes </a></li>
-                <li><a id="testChaudButton"> Test_Chaud </a></li>
-                <li><a id="testFroidButton"> Test_Froid </a></li>
+                <li><a id="testPageButton"> Tests </a></li>
 
             </ul>
             </nav>
@@ -46,9 +45,9 @@
             <div id="historyPage">
                 <table>
                     <thead>
-                    <td id="sortSensorByExt">Exterieur</td>
-                    <td id="sortSensorByInt">Interieur</td>
-                    <td id="sortSensorByDate">Date</td>
+                    <td id="sortSensorByExt">Exterieur ⟠</td>
+                    <td id="sortSensorByInt">Interieur ⟠</td>
+                    <td id="sortSensorByDate">Date ⟠</td>
                     </thead>
                     <tbody id="sensorTable"></tbody>
                 </table>
@@ -56,11 +55,15 @@
             <div id="alertHistoryPage">
                 <table>
                     <thead>
-                        <td id="sortAlertByMsg">Message</td>
-                        <td id="sortAlertByDate">Date</td>
+                        <td id="sortAlertByMsg">Message ⟠</td>
+                        <td id="sortAlertByDate">Date ⟠</td>
                     </thead>
                     <tbody id="alertTable"></tbody>
                 </table>
+            </div>
+            <div id="testPage">
+                <button id="testAlertHot">Forcer alerte chaud</button>
+                <button id="testAlertCold">Forcer alerte froid</button>
             </div>
         </main>
 

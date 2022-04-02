@@ -31,25 +31,32 @@ function refreshGraphics(){
             datasets: [{
                 data: cpt1.slice(-20),
                 label: "Capteur interieur",
-                borderColor: "#fc03df",
+                borderColor: "#e500ff",
                 fill: true,
                 backgroundColor: gradient1
             }, {
                 data: cpt2.slice(-20),
                 label: "Capteur exterieur",
-                borderColor: "#4c00ff",
+                borderColor: "#001dd0",
                 fill: true,
                 backgroundColor: gradient2
             }
             ]
         },
         options: {
+            legend: {
+                labels: {
+                    fontColor: "white",
+                    fontSize: 18
+                }
+            },
             tooltips: {enabled: false},
-            hover: {mode: null},
             events: [],
             title: {
                 display: true,
-                text: 'Evolution des températures'
+                text: 'Evolution des températures',
+                fontColor: "white",
+                fontSize: 18
             },
             scales: {
                 yAxes: [{
@@ -57,6 +64,15 @@ function refreshGraphics(){
                     ticks: {
                         suggestedMin: 0,
                         suggestedMax: 25,
+                        fontColor: "white",
+                        fontSize: 18
+                    }
+                }],
+                xAxes: [{
+                    display: true,
+                    ticks: {
+                        fontColor: "white",
+                        fontSize: 18
                     }
                 }]
 

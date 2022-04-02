@@ -10,6 +10,9 @@ function switchPage(page){
         case 'alertHistory':
             document.getElementById('alertHistoryPage').style = 'display: block;';
             break;
+        case 'test':
+            document.getElementById('testPage').style = 'display: block;';
+            break;
     }
 }
 
@@ -17,6 +20,7 @@ function disableAllPages(){
     document.getElementById('historyPage').style = 'display: none;';
     document.getElementById('mainPage').style = 'display: none;';
     document.getElementById('alertHistoryPage').style = 'display: none;';
+    document.getElementById('testPage').style = 'display: none;';
 
 }
 
@@ -32,11 +36,17 @@ document.getElementById("mainPageButton").onclick = function (){
 document.getElementById("alertHistoryPageButton").onclick = function (){
     switchPage('alertHistory');
 }
-document.getElementById("testChaudButton").onclick = function (){
-    new Alert('alerte : Feu en vue !');
+document.getElementById("testPageButton").onclick = function (){
+    switchPage('test');
 }
-document.getElementById("testFroidButton").onclick = function (){
-    new Alert('alerte : Banquise en vue !');
+
+document.getElementById("testAlertHot").onclick = function (){
+    new Alert('Alerte : Chaud (test)')
 }
+
+document.getElementById("testAlertCold").onclick = function (){
+    new Alert('Alerte : Froid (test)')
+}
+
 switchPage('main');
 HotSDK.switchPage = switchPage;
