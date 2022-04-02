@@ -1,5 +1,4 @@
 var STATIC_CACHE_CONTAINER = "static_v1"
-var CACHE_CONTAINING_ERROR_MESSAGES = 'errorCache'
 var STATIC_FILES = [
     "/",
     "/favicon.ico",
@@ -7,6 +6,10 @@ var STATIC_FILES = [
     "/controllers/global.js",
     "/controllers/layout.js",
     "/controllers/storage.js",
+    "/controllers/connection.js",
+    "/style/",
+    "/style/layout.css"
+
 ]
 
 self.addEventListener('install', function(event){
@@ -54,12 +57,6 @@ addEventListener('fetch', function(event) {
                                     cache.put(event.request.url, res.clone());    //save the response for future
                                     return res;   // return the fetched data
                                 })
-                        })
-                        .catch(function(err) {       // fallback mechanism
-                            return caches.open(CACHE_CONTAINING_ERROR_MESSAGES)
-                                .then(function(cache) {
-                                    return cache.match('/offline.html');
-                                });
                         });
                 }
             })
