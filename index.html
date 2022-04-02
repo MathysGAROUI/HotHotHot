@@ -14,11 +14,11 @@
             <h1>Bienvenue sur notre DashBoard 2</h1>
             <nav class="menu">
             <ul>
-                <li><a id="mainPageButton"> Accueil </a></li>
-                <li><a id="historyPageButton"> Historique </a></li>
-                <li><a id="alertHistoryPageButton"> Alertes </a></li>
-                <li><a id="testPageButton"> Tests </a></li>
-
+                <li id="mainPageButton"><a> Accueil </a></li>
+                <li id="historyPageButton"><a> Historique </a></li>
+                <li id="alertHistoryPageButton"><a> Alertes </a></li>
+                <li id="testPageButton"><a> Tests </a></li>
+                <li id="accountPageButton"><a> Mon Compte </a></li>
             </ul>
             </nav>
         </header>
@@ -64,6 +64,22 @@
             <div id="testPage">
                 <button id="testAlertHot">Forcer alerte chaud</button>
                 <button id="testAlertCold">Forcer alerte froid</button>
+            </div>
+            <div id="accountPage">
+                <section class='login' id='login'>
+                    <div class='head'>
+                        <h1 class='company'>Bonjour !</h1>
+                    </div>
+                    <p class='msg'>Connectez vous</p>
+                    <div class='form'>
+                        <form>
+                            <input type="text" placeholder='E-mail' class='text' id='username' required><br>
+                            <input type="password" placeholder='••••••••••••••' class='password'><br>
+                            <a href="" class='btn-login' id='do-login'>Connection</a>
+                            <a href="" class='forgot'>Mot de passe oublié ?</a>
+                        </form>
+                    </div>
+                </section>
             </div>
         </main>
 

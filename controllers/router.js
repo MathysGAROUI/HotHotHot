@@ -13,6 +13,9 @@ function switchPage(page){
         case 'test':
             document.getElementById('testPage').style = 'display: block;';
             break;
+        case 'account':
+            document.getElementById('accountPage').style = 'display: block;';
+            break;
     }
 }
 
@@ -21,6 +24,7 @@ function disableAllPages(){
     document.getElementById('mainPage').style = 'display: none;';
     document.getElementById('alertHistoryPage').style = 'display: none;';
     document.getElementById('testPage').style = 'display: none;';
+    document.getElementById('accountPage').style = 'display: none;';
 
 }
 
@@ -40,13 +44,10 @@ document.getElementById("testPageButton").onclick = function (){
     switchPage('test');
 }
 
-document.getElementById("testAlertHot").onclick = function (){
-    new Alert('Alerte : Chaud (test)')
+document.getElementById("accountPageButton").onclick = function (){
+    switchPage('account');
 }
 
-document.getElementById("testAlertCold").onclick = function (){
-    new Alert('Alerte : Froid (test)')
-}
 
 switchPage('main');
 HotSDK.switchPage = switchPage;

@@ -41,6 +41,13 @@ function sendAlert(msg){
     }
 }
 
+document.getElementById("testAlertHot").onclick = function (){
+    new Alert('Alerte : Chaud (test)')
+}
+
+document.getElementById("testAlertCold").onclick = function (){
+    new Alert('Alerte : Froid (test)')
+}
 
 
 HotSDK.sendAlert = sendAlert;
