@@ -1,7 +1,7 @@
 function storeSensors(cpt1, cpt2){
     const d = new Date();
-    let hour = d.getHours();
-    let minutes = d.getMinutes();
+    let hour = d.getHours().toString().length === 1 ? '0'+d.getHours() : d.getHours();
+    let minutes = d.getMinutes().toString().length === 1 ? '0'+d.getMinutes() : d.getMinutes();
     jsonData = JSON.parse(localStorage.getItem('capteurs'));
     jsonData.cpt1.push(cpt1);
     jsonData.cpt2.push(cpt2);
@@ -11,8 +11,8 @@ function storeSensors(cpt1, cpt2){
 
 function storeAlert(msg){
     const d = new Date();
-    let hour = d.getHours();
-    let minutes = d.getMinutes();
+    let hour = d.getHours().toString().length === 1 ? '0'+d.getHours() : d.getHours();
+    let minutes = d.getMinutes().toString().length === 1 ? '0'+d.getMinutes() : d.getMinutes();
     jsonData = JSON.parse(localStorage.getItem('alerts'));
     jsonData.msg.push(msg);
     jsonData.dates.push(hour+":"+minutes);

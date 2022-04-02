@@ -23,7 +23,6 @@ function disableAllPages(){
 
 document.getElementById("historyPageButton").onclick = function (){
     switchPage('history');
-    HotSDK.notifyAndAlert('hihihiha');
 }
 
 document.getElementById("mainPageButton").onclick = function (){
@@ -33,5 +32,11 @@ document.getElementById("mainPageButton").onclick = function (){
 document.getElementById("alertHistoryPageButton").onclick = function (){
     switchPage('alertHistory');
 }
-
+document.getElementById("testChaudButton").onclick = function (){
+    HotSDK.notifyAndAlert('Chaud');
+}
+document.getElementById("testFroidButton").onclick = function (){
+    HotSDK.notifyAndAlert('Froid');
+}
+switchPage('main');
 HotSDK.switchPage = switchPage;
