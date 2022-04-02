@@ -4,15 +4,18 @@ const alertTable = document.getElementById("alertTable");
 
 function loadTable(table){
   let tableRef;
+  let tableName;
   switch (table){
     case 'alert':
       tableRef = alertTable;
+      tableName = 'alerts';
       break
     case 'sensor':
       tableRef = sensorTable;
+      tableName = 'capteurs';
       break
   }
-  let JSONalerts = HotSDK.load(table);
+  let JSONalerts = HotSDK.load(tableName);
   for(let i = 0; i < JSONalerts.dates.length; i++){
     let tableRow = document.createElement('tr');
     let msg = document.createElement('td');
@@ -28,7 +31,19 @@ function loadTable(table){
 }
 
 function updateTable(table){
-  let JSONalerts = HotSDK.load(table);
+  let tableRef;
+  let tableName;
+  switch (table){
+    case 'alert':
+      tableRef = alertTable;
+      tableName = 'alerts';
+      break
+    case 'sensor':
+      tableRef = sensorTable;
+      tableName = 'capteurs';
+      break
+  }
+  let JSONalerts = HotSDK.load(tableName);
   let tableRow = document.createElement('tr');
   let msg = document.createElement('td');
   msg.classList.add('listItem');
@@ -38,14 +53,8 @@ function updateTable(table){
   date.classList.add('listItem');
   date.innerHTML = JSONalerts.dates[JSONalerts.dates.length - 1];
   tableRow.appendChild(date);
-  switch (table){
-    case 'alert':
-      alertTable.appendChild(tableRow);
-      break
-    case 'sensor':
-      sensorTable.appendChild(tableRow);
-      break
-  }
+  tableRef.appendChild(tableRow);
+
 }
 
 function sort(table, by){
