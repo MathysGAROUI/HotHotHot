@@ -11,7 +11,7 @@ function initializePushNotifications() {
 function sendNotification(msg) {
     const img = "/images/app_icon192x192.png";
     const text = msg;
-    const title = "Titre";
+    const title = "Nouvelle alerte";
     const options = {
         body: text,
         icon: "/images/app_icon192x192.png",
